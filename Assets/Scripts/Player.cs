@@ -7,14 +7,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private GameInput gameInput;
     private bool isWalking;
-
+    private Vector3 lastInteractionDir;
 
     // Update is called once per frame
     private void Update()
     {
         HandleMovement();
         HandleInteractions();
-
+        gameInput.IsRunning();
     }
 
     public bool IsWalking()
@@ -25,9 +25,25 @@ public class Player : MonoBehaviour
     private void HandleInteractions()
     {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+
         float interactDistance = 2f;
         Vector3 moveDir = new(inputVector.x, 0f, inputVector.y);
-        Physics.Raycast(transform.position, moveDir, out RaycastHit raycastHit, interactDistance);
+
+        if (moveDir != Vector3.zero)
+        {
+            lastInteractionDir = moveDir;
+        }
+        if (Physics.Raycast(transform.position, lastInteractionDir, out RaycastHit raycastHit, interactDistance))
+        {
+            if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
+            {
+                clearCounter.Interact();
+            }
+        }
+        else
+        {
+
+        }
     }
     private void HandleMovement()
     {

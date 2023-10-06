@@ -21,4 +21,11 @@ public class GameInput : MonoBehaviour
         inputVector = inputVector.normalized;
         return inputVector;
     }
+
+    public void IsRunning()
+    {
+        bool isShiftPressed = playerInputActions.Player.Run.triggered;
+        Debug.Log(isShiftPressed);
+    }
+
 }
