@@ -83,7 +83,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         {
             if (raycastHit.transform.TryGetComponent(out BaseCounter baseCounter))
             {
-
+                
                 if (baseCounter != selectedCounter)
                 {
                     SetSelectedCounter(baseCounter);
