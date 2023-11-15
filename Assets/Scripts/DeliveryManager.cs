@@ -8,12 +8,15 @@ public class DeliveryManager : MonoBehaviour
 
     public event System.EventHandler OnRecipeSpawned;
     public event System.EventHandler OnRecipeComplete;
+    public event System.EventHandler OnRecipeSuccess;
+    public event System.EventHandler OnRecipeFailed;
     public static DeliveryManager Instance { get; private set; }
     private List<RecipeSO> waitingRecipeSOList;
     [SerializeField] private RecipeListSO recipeListSO;
     private int waitingRecipeMax = 4;
     private float spawnRecipieTimer;
     private float spawnRecipieTimerMax = 4f;
+    private int successfullRecipieAmount;
     private void Awake()
     {
         Instance = this;
@@ -75,11 +78,15 @@ public class DeliveryManager : MonoBehaviour
 
                         waitingRecipeSOList.RemoveAt(i);
                         OnRecipeComplete?.Invoke(this, System.EventArgs.Empty);
+                        OnRecipeSuccess?.Invoke(this, System.EventArgs.Empty);
+                        successfullRecipieAmount++;
                         return;
                     }
                 }
             }
         }
+
+        OnRecipeFailed?.Invoke(this, System.EventArgs.Empty);
 
     }
 
@@ -87,6 +94,10 @@ public class DeliveryManager : MonoBehaviour
     public List<RecipeSO> GetRecipeSOList()
     {
         return waitingRecipeSOList;
+    }
+    public int GetSuccessfullRecipieAmout()
+    {
+        return successfullRecipieAmount;
     }
 
 }
