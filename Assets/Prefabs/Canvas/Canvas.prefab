@@ -852,7 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5e3326189ce81418d86ebcddd4d92b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownText: {fileID: 0}
+  countdownText: {fileID: 1671779580607133933}
 --- !u!1 &2209691863744398400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2912,10 +2912,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 689449499748663835}
+  - {fileID: 4532142560092342506}
   - {fileID: 7065327880812174359}
   - {fileID: 4043816372932267978}
   - {fileID: 3488620416583407179}
-  - {fileID: 4532142560092342506}
   m_Father: {fileID: 6488020566532926385}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

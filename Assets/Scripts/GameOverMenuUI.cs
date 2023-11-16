@@ -12,6 +12,7 @@ public class GameOverMenuUI : MonoBehaviour
     {
         mainMenu.onClick.AddListener(() =>
         {
+            Debug.Log("pres 1");
             if (!GameManager.Instance.IsGamePlaying())
             {
                 GameManager.Instance.SetWaitingToStartState();
@@ -20,6 +21,7 @@ public class GameOverMenuUI : MonoBehaviour
         });
         restartGame.onClick.AddListener(() =>
         {
+            Debug.Log("pres 2");
             Loader.Load(Loader.Scene.MenuScene);
         });
     }
