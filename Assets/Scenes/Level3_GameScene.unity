@@ -3122,8 +3122,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049467229}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
-=======
 --- !u!1001 &1062225154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3397,7 +3395,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3f02a913a83c2842ab76761a0904838, type: 3}
->>>>>>> e16c810602811cfeca27fb74b7f410de894c9286
 --- !u!1001 &1095428701
 PrefabInstance:
   m_ObjectHideFlags: 0
