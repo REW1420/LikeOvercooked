@@ -20,10 +20,12 @@ public class KitchenObject : MonoBehaviour
         }
 
         this.kitchenObjectParent = kitchenObjectParent;
+
         if (kitchenObjectParent.HasKitchenObject())
         {
             Debug.LogError("Error tiene dos cosas wotofooo");
         }
+        
         kitchenObjectParent.SetKitchenObject(this);
 
         transform.parent = kitchenObjectParent.GetKitchenObjectFollowTransform();
