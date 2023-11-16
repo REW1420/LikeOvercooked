@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     private float waitingToStartTimer = 1f;
     private float countdownToStartTimer = 3f;
     private float gamePlayingTimer;
-    private float gamePlayingTimerMax = 100f;
+    private float gamePlayingTimerMax = 5f;
 
     public event EventHandler OnStateChanged;
     private void Awake()
