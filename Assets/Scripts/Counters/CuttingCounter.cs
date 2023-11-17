@@ -12,6 +12,10 @@ public class CuttingCounter : BaseCounter, IHasProgress
     public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
 
     private int cuttingProgress;
+    new public static void ResetStatisData()
+    {
+        OnAnyCut = null;
+    }
     public override void Interact(Player player)
     {
 
