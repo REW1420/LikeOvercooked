@@ -52,5 +52,5 @@
         "Temp/": true
     },
     "git.ignoreLimitWarning": true,
-    "dotnet.defaultSolution": "GamePractice.sln"
+    "dotnet.defaultSolution": "LikeOvercooked.sln"
 }
