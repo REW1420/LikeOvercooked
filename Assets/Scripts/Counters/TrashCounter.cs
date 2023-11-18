@@ -20,4 +20,7 @@ public class TrashCounter : BaseCounter
     {
         OnAnyObjectTrashed = null;
     }
+
+
+
 }

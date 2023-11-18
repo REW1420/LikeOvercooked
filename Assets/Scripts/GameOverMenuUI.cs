@@ -7,7 +7,6 @@ public class GameOverMenuUI : MonoBehaviour
 {
     [SerializeField] private Button restartGame;
     [SerializeField] private Button mainMenu;
-
     private void Awake()
     {
         mainMenu.onClick.AddListener(() =>
@@ -16,7 +15,12 @@ public class GameOverMenuUI : MonoBehaviour
 
             GameManager.Instance.SetWaitingToStartState();
             DeliveryManager.Instance.ClearRecipeSOList();
-            Debug.Log("game restared");
+            if (Player.Instance.HasKitchenObject())
+            {
+                Player.Instance.GetKitchenObject().DestroySeflt();
+            }
+
+                
 
         });
         restartGame.onClick.AddListener(() =>
@@ -25,4 +29,5 @@ public class GameOverMenuUI : MonoBehaviour
             Loader.Load(Loader.Scene.MenuScene);
         });
     }
+
 }
