@@ -12,16 +12,16 @@ public class GameOverMenuUI : MonoBehaviour
     {
         mainMenu.onClick.AddListener(() =>
         {
-            Debug.Log("pres 1");
-            if (!GameManager.Instance.IsGamePlaying())
-            {
-                GameManager.Instance.SetWaitingToStartState();
-                DeliveryManager.Instance.ClearRecipeSOList();
-            }
+
+
+            GameManager.Instance.SetWaitingToStartState();
+            DeliveryManager.Instance.ClearRecipeSOList();
+            Debug.Log("game restared");
+
         });
         restartGame.onClick.AddListener(() =>
         {
-            Debug.Log("pres 2");
+
             Loader.Load(Loader.Scene.MenuScene);
         });
     }

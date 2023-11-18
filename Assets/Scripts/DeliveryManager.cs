@@ -103,6 +103,7 @@ public class DeliveryManager : MonoBehaviour
     public void ClearRecipeSOList()
     {
         waitingRecipeSOList.Clear();
+        successfullRecipieAmount = 0;
     }
 
 }
